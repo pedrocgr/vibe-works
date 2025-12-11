@@ -50,7 +50,7 @@ export default function TeacherLogin() {
             teacherCode: data.teacher.teacherCode,
             authenticated: true,
             userType: "teacher",
-          })
+          }),
         );
 
         toast.success("Login realizado com sucesso!");
@@ -75,7 +75,10 @@ export default function TeacherLogin() {
 
       <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
-          <Link to="/" className="flex items-center justify-center space-x-2 mb-6">
+          <Link
+            to="/"
+            className="flex items-center justify-center space-x-2 mb-6"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white">
               <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L15.09 8.26H22L17.82 12.61L19.91 18.87L12 14.52L4.09 18.87L6.18 12.61L2 8.26H8.91L12 2Z" />
@@ -88,12 +91,13 @@ export default function TeacherLogin() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             Login do Professor
           </h1>
-          <p className="text-gray-600">Entre com sua conta para gerenciar alunos</p>
+          <p className="text-gray-600">
+            Entre com sua conta para gerenciar alunos
+          </p>
         </div>
 
         <Card className="border-0 shadow-lg">
-          <CardHeader className="pb-4">
-          </CardHeader>
+          <CardHeader className="pb-4"></CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               {error && (
@@ -103,7 +107,9 @@ export default function TeacherLogin() {
               )}
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Email</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Email
+                </label>
                 <Input
                   type="email"
                   placeholder="seu@email.com"
@@ -118,7 +124,9 @@ export default function TeacherLogin() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Senha</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Senha
+                </label>
                 <div className="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
@@ -150,7 +158,10 @@ export default function TeacherLogin() {
                   <input type="checkbox" className="w-4 h-4" />
                   <span className="text-gray-600">Lembrar-me</span>
                 </label>
-                <a href="#" className="text-brand-600 hover:text-brand-700 font-medium">
+                <a
+                  href="#"
+                  className="text-brand-600 hover:text-brand-700 font-medium"
+                >
                   Esqueceu a senha?
                 </a>
               </div>
@@ -179,7 +190,10 @@ export default function TeacherLogin() {
         </Card>
 
         <div className="text-center mt-6">
-          <Link to="/" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+          <Link
+            to="/"
+            className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+          >
             ← Voltar ao início
           </Link>
         </div>

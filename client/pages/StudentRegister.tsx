@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Eye, EyeOff, Upload } from "lucide-react";
-import { StudentRegistrationRequest, StudentRegistrationResponse } from "@shared/api";
+import {
+  StudentRegistrationRequest,
+  StudentRegistrationResponse,
+} from "@shared/api";
 import { toast } from "sonner";
 
 export default function StudentRegister() {
@@ -55,7 +58,10 @@ export default function StudentRegister() {
       return;
     }
 
-    if (formData.dailyGoal && (parseInt(formData.dailyGoal) < 1 || parseInt(formData.dailyGoal) > 100)) {
+    if (
+      formData.dailyGoal &&
+      (parseInt(formData.dailyGoal) < 1 || parseInt(formData.dailyGoal) > 100)
+    ) {
       setError("Meta diária deve ser um número entre 1 e 100");
       return;
     }
@@ -99,7 +105,7 @@ export default function StudentRegister() {
             diagnosticCompleted: false,
             diagnosticStarted: false,
             userType: "student",
-          })
+          }),
         );
 
         toast.success("Aluno cadastrado com sucesso!");
@@ -124,7 +130,10 @@ export default function StudentRegister() {
 
       <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
-          <Link to="/" className="flex items-center justify-center space-x-2 mb-6">
+          <Link
+            to="/"
+            className="flex items-center justify-center space-x-2 mb-6"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white">
               <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L15.09 8.26H22L17.82 12.61L19.91 18.87L12 14.52L4.09 18.87L6.18 12.61L2 8.26H8.91L12 2Z" />
@@ -134,8 +143,12 @@ export default function StudentRegister() {
               MentorIA
             </span>
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Comece agora</h1>
-          <p className="text-gray-600">Crie sua conta e tenha acesso a todos os recursos</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Comece agora
+          </h1>
+          <p className="text-gray-600">
+            Crie sua conta e tenha acesso a todos os recursos
+          </p>
         </div>
 
         <Card className="border-0 shadow-lg">
@@ -160,11 +173,15 @@ export default function StudentRegister() {
                   required
                   className="h-10 uppercase"
                 />
-                <p className="text-xs text-gray-500">Código fornecido por seu professor</p>
+                <p className="text-xs text-gray-500">
+                  Código fornecido por seu professor
+                </p>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Nome Completo</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Nome Completo
+                </label>
                 <Input
                   type="text"
                   name="fullName"
@@ -177,7 +194,9 @@ export default function StudentRegister() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Email</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Email
+                </label>
                 <Input
                   type="email"
                   name="email"
@@ -190,7 +209,9 @@ export default function StudentRegister() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Senha</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Senha
+                </label>
                 <div className="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
@@ -216,7 +237,9 @@ export default function StudentRegister() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Confirmar Senha</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Confirmar Senha
+                </label>
                 <div className="relative">
                   <Input
                     type={showConfirmPassword ? "text" : "password"}
@@ -243,7 +266,8 @@ export default function StudentRegister() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
-                  Foto de Perfil <span className="text-gray-500">(opcional)</span>
+                  Foto de Perfil{" "}
+                  <span className="text-gray-500">(opcional)</span>
                 </label>
                 <button
                   type="button"
@@ -251,7 +275,9 @@ export default function StudentRegister() {
                   className="w-full h-10 border-2 border-dashed border-gray-300 rounded-lg hover:border-brand-500 transition-colors flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-brand-600"
                 >
                   <Upload className="h-4 w-4" />
-                  {formData.photoFileName ? formData.photoFileName : "Selecionar imagem"}
+                  {formData.photoFileName
+                    ? formData.photoFileName
+                    : "Selecionar imagem"}
                 </button>
                 <input
                   ref={fileInputRef}
@@ -264,7 +290,8 @@ export default function StudentRegister() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
-                  Meta Diária de Questões <span className="text-gray-500">(opcional)</span>
+                  Meta Diária de Questões{" "}
+                  <span className="text-gray-500">(opcional)</span>
                 </label>
                 <Input
                   type="number"
@@ -276,18 +303,27 @@ export default function StudentRegister() {
                   max="100"
                   className="h-10"
                 />
-                <p className="text-xs text-gray-500">Quantidade de questões que deseja resolver por dia (padrão: 10)</p>
+                <p className="text-xs text-gray-500">
+                  Quantidade de questões que deseja resolver por dia (padrão:
+                  10)
+                </p>
               </div>
 
               <div className="flex items-start gap-2 text-sm">
                 <input type="checkbox" className="w-4 h-4 mt-0.5" required />
                 <span className="text-gray-600">
                   Concordo com os{" "}
-                  <a href="#" className="text-brand-600 hover:text-brand-700 font-medium">
+                  <a
+                    href="#"
+                    className="text-brand-600 hover:text-brand-700 font-medium"
+                  >
                     Termos de Serviço
                   </a>{" "}
                   e{" "}
-                  <a href="#" className="text-brand-600 hover:text-brand-700 font-medium">
+                  <a
+                    href="#"
+                    className="text-brand-600 hover:text-brand-700 font-medium"
+                  >
                     Política de Privacidade
                   </a>
                 </span>
@@ -305,7 +341,10 @@ export default function StudentRegister() {
             <div className="mt-6 pt-6 border-t text-center">
               <p className="text-gray-600 text-sm">
                 Já tem uma conta?{" "}
-                <Link to="/login" className="text-brand-600 hover:text-brand-700 font-medium">
+                <Link
+                  to="/login"
+                  className="text-brand-600 hover:text-brand-700 font-medium"
+                >
                   Faça login aqui
                 </Link>
               </p>
@@ -314,7 +353,10 @@ export default function StudentRegister() {
         </Card>
 
         <div className="text-center mt-6">
-          <Link to="/" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+          <Link
+            to="/"
+            className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+          >
             ← Voltar ao início
           </Link>
         </div>

@@ -23,7 +23,10 @@ export function validateEmail(email: string): boolean {
   return emailRegex.test(email);
 }
 
-export function validatePassword(password: string): { valid: boolean; error?: string } {
+export function validatePassword(password: string): {
+  valid: boolean;
+  error?: string;
+} {
   if (password.length < 6) {
     return { valid: false, error: "Senha deve ter pelo menos 6 caracteres" };
   }

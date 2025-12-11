@@ -15,7 +15,10 @@ export default function LoginChoice() {
 
       <div className="w-full max-w-2xl relative z-10">
         <div className="text-center mb-12">
-          <Link to="/" className="flex items-center justify-center space-x-2 mb-6">
+          <Link
+            to="/"
+            className="flex items-center justify-center space-x-2 mb-6"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white">
               <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L15.09 8.26H22L17.82 12.61L19.91 18.87L12 14.52L4.09 18.87L6.18 12.61L2 8.26H8.91L12 2Z" />
@@ -25,8 +28,12 @@ export default function LoginChoice() {
               MentorIA
             </span>
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Bem-vindo de volta</h1>
-          <p className="text-gray-600">Selecione o tipo de conta que você deseja acessar</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Bem-vindo de volta
+          </h1>
+          <p className="text-gray-600">
+            Selecione o tipo de conta que você deseja acessar
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -45,7 +52,8 @@ export default function LoginChoice() {
             </CardHeader>
             <CardContent className="space-y-4 text-center">
               <p className="text-gray-600 text-sm">
-                Acesse seu painel para gerenciar alunos e acompanhar seu desempenho
+                Acesse seu painel para gerenciar alunos e acompanhar seu
+                desempenho
               </p>
               <Button
                 className="w-full bg-purple-600 hover:bg-purple-700 h-10"
@@ -58,7 +66,10 @@ export default function LoginChoice() {
               </Button>
               <p className="text-xs text-gray-500">
                 Não tem uma conta?{" "}
-                <Link to="/teacher-register" className="text-purple-600 hover:text-purple-700 font-medium">
+                <Link
+                  to="/teacher-register"
+                  className="text-purple-600 hover:text-purple-700 font-medium"
+                >
                   Cadastre-se aqui
                 </Link>
               </p>
@@ -93,7 +104,10 @@ export default function LoginChoice() {
               </Button>
               <p className="text-xs text-gray-500">
                 Não tem uma conta?{" "}
-                <Link to="/register" className="text-brand-600 hover:text-brand-700 font-medium">
+                <Link
+                  to="/register"
+                  className="text-brand-600 hover:text-brand-700 font-medium"
+                >
                   Cadastre-se aqui
                 </Link>
               </p>
@@ -102,7 +116,10 @@ export default function LoginChoice() {
         </div>
 
         <div className="text-center mt-8">
-          <Link to="/" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+          <Link
+            to="/"
+            className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+          >
             ← Voltar ao início
           </Link>
         </div>

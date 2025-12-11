@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Eye, EyeOff, Copy, Check } from "lucide-react";
-import { TeacherRegistrationRequest, TeacherRegistrationResponse } from "@shared/api";
+import {
+  TeacherRegistrationRequest,
+  TeacherRegistrationResponse,
+} from "@shared/api";
 import { toast } from "sonner";
 
 export default function TeacherRegister() {
@@ -86,12 +89,12 @@ export default function TeacherRegister() {
             teacherCode: data.teacher.teacherCode,
             authenticated: true,
             userType: "teacher",
-          })
+          }),
         );
       }
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : "Erro ao conectar ao servidor"
+        err instanceof Error ? err.message : "Erro ao conectar ao servidor",
       );
       toast.error("Erro ao cadastrar professor");
     } finally {
@@ -109,9 +112,16 @@ export default function TeacherRegister() {
 
         <div className="w-full max-w-md relative z-10">
           <div className="text-center mb-8">
-            <Link to="/" className="flex items-center justify-center space-x-2 mb-6">
+            <Link
+              to="/"
+              className="flex items-center justify-center space-x-2 mb-6"
+            >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white">
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
                   <path d="M12 2L15.09 8.26H22L17.82 12.61L19.91 18.87L12 14.52L4.09 18.87L6.18 12.61L2 8.26H8.91L12 2Z" />
                 </svg>
               </div>
@@ -172,9 +182,7 @@ export default function TeacherRegister() {
                     </li>
                     <li className="flex gap-2">
                       <span className="font-bold flex-shrink-0">3.</span>
-                      <span>
-                        Acesse seu painel para gerenciar seus alunos
-                      </span>
+                      <span>Acesse seu painel para gerenciar seus alunos</span>
                     </li>
                   </ul>
                 </div>
@@ -211,7 +219,10 @@ export default function TeacherRegister() {
 
       <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
-          <Link to="/" className="flex items-center justify-center space-x-2 mb-6">
+          <Link
+            to="/"
+            className="flex items-center justify-center space-x-2 mb-6"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500 text-white">
               <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L15.09 8.26H22L17.82 12.61L19.91 18.87L12 14.52L4.09 18.87L6.18 12.61L2 8.26H8.91L12 2Z" />
@@ -326,11 +337,17 @@ export default function TeacherRegister() {
                 <input type="checkbox" className="w-4 h-4 mt-0.5" required />
                 <span className="text-gray-600">
                   Concordo com os{" "}
-                  <a href="#" className="text-brand-600 hover:text-brand-700 font-medium">
+                  <a
+                    href="#"
+                    className="text-brand-600 hover:text-brand-700 font-medium"
+                  >
                     Termos de Serviço
                   </a>{" "}
                   e{" "}
-                  <a href="#" className="text-brand-600 hover:text-brand-700 font-medium">
+                  <a
+                    href="#"
+                    className="text-brand-600 hover:text-brand-700 font-medium"
+                  >
                     Política de Privacidade
                   </a>
                 </span>
@@ -360,7 +377,10 @@ export default function TeacherRegister() {
         </Card>
 
         <div className="text-center mt-6">
-          <Link to="/" className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+          <Link
+            to="/"
+            className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+          >
             ← Voltar ao início
           </Link>
         </div>

@@ -82,7 +82,7 @@ export const registerTeacher: RequestHandler = (req, res) => {
 
     db.prepare(
       `INSERT INTO teachers (id, email, fullName, password, teacherCode, createdAt, updatedAt)
-       VALUES (?, ?, ?, ?, ?, ?, ?)`
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
     ).run(teacherId, email, fullName, hashedPassword, teacherCode, now, now);
 
     res.status(201).json({
@@ -157,8 +157,14 @@ export const registerStudent: RequestHandler = (req, res) => {
   const db = getDatabase();
 
   try {
-    const { email, fullName, password, confirmPassword, teacherCode, dailyGoal } =
-      req.body as StudentRegistrationRequest;
+    const {
+      email,
+      fullName,
+      password,
+      confirmPassword,
+      teacherCode,
+      dailyGoal,
+    } = req.body as StudentRegistrationRequest;
 
     // Validation
     if (!email || !fullName || !password || !teacherCode) {
@@ -226,7 +232,7 @@ export const registerStudent: RequestHandler = (req, res) => {
 
     db.prepare(
       `INSERT INTO students (id, email, fullName, password, teacherCode, teacherId, dailyGoal, createdAt, updatedAt)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     ).run(
       studentId,
       email,
@@ -236,7 +242,7 @@ export const registerStudent: RequestHandler = (req, res) => {
       teacher.id,
       dailyGoal || 10,
       now,
-      now
+      now,
     );
 
     res.status(201).json({
@@ -324,7 +330,7 @@ export const getTeacherStudents: RequestHandler = (req, res) => {
       .prepare(
         `SELECT id, email, fullName, dailyGoal, createdAt FROM students 
          WHERE teacherId = ? 
-         ORDER BY createdAt DESC`
+         ORDER BY createdAt DESC`,
       )
       .all(teacherId) as any[];
 

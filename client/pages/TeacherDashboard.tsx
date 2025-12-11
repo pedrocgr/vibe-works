@@ -81,9 +81,10 @@ export default function TeacherDashboard() {
     navigate("/");
   };
 
-  const filteredStudents = students.filter((student) =>
-    student.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    student.email.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredStudents = students.filter(
+    (student) =>
+      student.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.email.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   if (!teacher) {
@@ -108,11 +109,7 @@ export default function TeacherDashboard() {
             <span className="text-sm text-gray-600">
               Bem-vindo, <strong>{teacher.fullName}</strong>
             </span>
-            <Button
-              onClick={handleLogout}
-              variant="outline"
-              className="gap-2"
-            >
+            <Button onClick={handleLogout} variant="outline" className="gap-2">
               <LogOut className="h-4 w-4" />
               Sair
             </Button>
@@ -125,7 +122,9 @@ export default function TeacherDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Card className="md:col-span-1 bg-gradient-to-br from-brand-50 to-brand-100/50 border-brand-200">
             <CardHeader>
-              <CardTitle className="text-sm text-brand-700">Seu Código de Professor</CardTitle>
+              <CardTitle className="text-sm text-brand-700">
+                Seu Código de Professor
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="bg-white rounded-lg p-4 border-2 border-brand-300">
@@ -161,7 +160,9 @@ export default function TeacherDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-gray-600">Total de Alunos</p>
-                  <p className="text-3xl font-bold text-gray-900">{students.length}</p>
+                  <p className="text-3xl font-bold text-gray-900">
+                    {students.length}
+                  </p>
                 </div>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6 text-blue-600" />
@@ -175,7 +176,9 @@ export default function TeacherDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-gray-600">E-mail</p>
-                  <p className="text-sm font-mono text-gray-900 truncate">{teacher.email}</p>
+                  <p className="text-sm font-mono text-gray-900 truncate">
+                    {teacher.email}
+                  </p>
                 </div>
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6 text-purple-600" />
@@ -215,7 +218,9 @@ export default function TeacherDashboard() {
               <div className="text-center py-12">
                 <Users className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                 <p className="text-gray-600 font-medium">
-                  {searchQuery ? "Nenhum aluno encontrado" : "Nenhum aluno associado ainda"}
+                  {searchQuery
+                    ? "Nenhum aluno encontrado"
+                    : "Nenhum aluno associado ainda"}
                 </p>
                 <p className="text-gray-500 text-sm mt-2">
                   Compartilhe seu código: <strong>{teacher.teacherCode}</strong>
@@ -226,10 +231,18 @@ export default function TeacherDashboard() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Nome</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Email</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Meta Diária</th>
-                      <th className="text-left py-3 px-4 font-semibold text-gray-700">Data de Cadastro</th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                        Nome
+                      </th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                        Email
+                      </th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                        Meta Diária
+                      </th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                        Data de Cadastro
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -239,23 +252,33 @@ export default function TeacherDashboard() {
                         className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
                       >
                         <td className="py-3 px-4">
-                          <p className="font-medium text-gray-900">{student.fullName}</p>
+                          <p className="font-medium text-gray-900">
+                            {student.fullName}
+                          </p>
                         </td>
                         <td className="py-3 px-4">
-                          <p className="text-gray-600 text-sm">{student.email}</p>
+                          <p className="text-gray-600 text-sm">
+                            {student.email}
+                          </p>
                         </td>
                         <td className="py-3 px-4">
                           <div className="flex items-center gap-2">
                             <Target className="h-4 w-4 text-orange-600" />
-                            <span className="text-gray-900 font-medium">{student.dailyGoal}</span>
-                            <span className="text-gray-500 text-sm">questões/dia</span>
+                            <span className="text-gray-900 font-medium">
+                              {student.dailyGoal}
+                            </span>
+                            <span className="text-gray-500 text-sm">
+                              questões/dia
+                            </span>
                           </div>
                         </td>
                         <td className="py-3 px-4">
                           <div className="flex items-center gap-2">
                             <Calendar className="h-4 w-4 text-gray-400" />
                             <span className="text-gray-600 text-sm">
-                              {new Date(student.createdAt).toLocaleDateString("pt-BR")}
+                              {new Date(student.createdAt).toLocaleDateString(
+                                "pt-BR",
+                              )}
                             </span>
                           </div>
                         </td>
@@ -273,8 +296,9 @@ export default function TeacherDashboard() {
           <CardContent className="p-6">
             <h3 className="font-semibold text-blue-900 mb-2">💡 Dica</h3>
             <p className="text-blue-800 text-sm">
-              Para associar um novo aluno a sua turma, compartilhe seu código de professor{" "}
-              <strong>{teacher.teacherCode}</strong> com ele. Os alunos devem usar este código ao se registrarem na plataforma.
+              Para associar um novo aluno a sua turma, compartilhe seu código de
+              professor <strong>{teacher.teacherCode}</strong> com ele. Os
+              alunos devem usar este código ao se registrarem na plataforma.
             </p>
           </CardContent>
         </Card>
