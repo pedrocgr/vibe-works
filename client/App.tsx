@@ -16,7 +16,10 @@ import HistoricoQuestoes from "./pages/HistoricoQuestoes";
 import Configuracoes from "./pages/Configuracoes";
 import FeedbackSemanal from "./pages/FeedbackSemanal";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
+import StudentRegister from "./pages/StudentRegister";
+import TeacherRegister from "./pages/TeacherRegister";
+import TeacherLogin from "./pages/TeacherLogin";
+import TeacherDashboard from "./pages/TeacherDashboard";
 import Perfil from "./pages/Perfil";
 import NotFound from "./pages/NotFound";
 
@@ -31,7 +34,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<StudentRegister />} />
+          <Route path="/teacher-register" element={<TeacherRegister />} />
+          <Route path="/teacher-login" element={<TeacherLogin />} />
+          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/diagnostico-inicial" element={<DiagnosticoInicial />} />
           <Route path="/lista-questoes" element={<ListaQuestoes />} />
