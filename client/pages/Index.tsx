@@ -22,10 +22,10 @@ export default function Index() {
           </Link>
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="sm" asChild>
-              <Link to="/login">Entrar</Link>
+              <Link to="/login-choice">Entrar</Link>
             </Button>
             <Button size="sm" className="bg-brand-500 hover:bg-brand-600" asChild>
-              <Link to="/register">Começar Grátis</Link>
+              <Link to="/register-choice">Começar Grátis</Link>
             </Button>
           </div>
         </div>
