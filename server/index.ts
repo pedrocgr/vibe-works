@@ -1,8 +1,19 @@
 import express from "express";
 import cors from "cors";
-import { handleDemo } from "./routes/demo";
+import { handleDemo } from "./routes/demo.js";
+import { initializeDatabase } from "./db/init.js";
+import {
+  registerTeacher,
+  loginTeacher,
+  registerStudent,
+  loginStudent,
+  getTeacherStudents,
+} from "./routes/auth.js";
 
 export function createServer() {
+  // Initialize database
+  initializeDatabase();
+
   const app = express();
 
   // Middleware
@@ -16,6 +27,13 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // Auth routes
+  app.post("/api/auth/register-teacher", registerTeacher);
+  app.post("/api/auth/login-teacher", loginTeacher);
+  app.post("/api/auth/register-student", registerStudent);
+  app.post("/api/auth/login-student", loginStudent);
+  app.get("/api/auth/teacher/:teacherId/students", getTeacherStudents);
 
   return app;
 }

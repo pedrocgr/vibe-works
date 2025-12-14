@@ -12,7 +12,13 @@ export default function Index() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500 text-white">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <path d="M12 2L15.09 8.26H22L17.82 12.61L19.91 18.87L12 14.52L4.09 18.87L6.18 12.61L2 8.26H8.91L12 2Z" />
               </svg>
             </div>
@@ -22,10 +28,14 @@ export default function Index() {
           </Link>
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="sm" asChild>
-              <Link to="/login">Entrar</Link>
+              <Link to="/login-choice">Entrar</Link>
             </Button>
-            <Button size="sm" className="bg-brand-500 hover:bg-brand-600" asChild>
-              <Link to="/register">Começar Grátis</Link>
+            <Button
+              size="sm"
+              className="bg-brand-500 hover:bg-brand-600"
+              asChild
+            >
+              <Link to="/register-choice">Começar Grátis</Link>
             </Button>
           </div>
         </div>
@@ -41,7 +51,11 @@ export default function Index() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500 text-white">
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
                     <path d="M12 2L15.09 8.26H22L17.82 12.61L19.91 18.87L12 14.52L4.09 18.87L6.18 12.61L2 8.26H8.91L12 2Z" />
                   </svg>
                 </div>
