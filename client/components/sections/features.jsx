@@ -5,19 +5,28 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.jsx";
-import { Brain, Target, BarChart3, CheckCircle, Zap, Users } from "lucide-react";
+import {
+  Brain,
+  Target,
+  BarChart3,
+  CheckCircle,
+  Zap,
+  Users,
+} from "lucide-react";
 
 export function FeaturesSection() {
   const features = [
     {
       icon: Brain,
       title: "IA Personalizada",
-      description: "Algoritmo inteligente que se adapta ao seu estilo e ritmo de aprendizado",
+      description:
+        "Algoritmo inteligente que se adapta ao seu estilo e ritmo de aprendizado",
     },
     {
       icon: Target,
       title: "Diagnóstico Inicial",
-      description: "Avaliação completa das suas fraquezas para focar no que importa",
+      description:
+        "Avaliação completa das suas fraquezas para focar no que importa",
     },
     {
       icon: BarChart3,
@@ -27,7 +36,8 @@ export function FeaturesSection() {
     {
       icon: CheckCircle,
       title: "Listas Diárias",
-      description: "Questões selecionadas todos os dias baseadas no seu desempenho",
+      description:
+        "Questões selecionadas todos os dias baseadas no seu desempenho",
     },
     {
       icon: Zap,
@@ -57,7 +67,10 @@ export function FeaturesSection() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Card key={index} className="border-0 shadow-sm hover:shadow-md transition">
+              <Card
+                key={index}
+                className="border-0 shadow-sm hover:shadow-md transition"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 bg-brand-100 rounded-lg">

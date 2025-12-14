@@ -12,7 +12,8 @@ export function CTASection() {
           </h2>
 
           <p className="text-xl text-brand-100 mb-8">
-            Comece sua jornada hoje e veja resultados em dias. Avaliação diagnóstica completa.
+            Comece sua jornada hoje e veja resultados em dias. Avaliação
+            diagnóstica completa.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -33,14 +34,13 @@ export function CTASection() {
               className="border-white text-white hover:bg-brand-400 px-8 py-4 text-lg"
               asChild
             >
-              <Link to="#contato">
-                Saiba Mais
-              </Link>
+              <Link to="#contato">Saiba Mais</Link>
             </Button>
           </div>
 
           <p className="text-brand-100 text-sm mt-8">
-            ✓ Sem cartão de crédito necessário  ✓ Acesso completo  ✓ Cancelamento a qualquer hora
+            ✓ Sem cartão de crédito necessário ✓ Acesso completo ✓ Cancelamento
+            a qualquer hora
           </p>
         </div>
       </div>

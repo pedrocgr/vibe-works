@@ -20,7 +20,9 @@ export function HeroSection() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Trilhas de questões no enem selecionadas individualmente para você todos os dias baseado no seu desempenho. Estudo com eficiência e foco no que precisa para aprovação.
+            Trilhas de questões no enem selecionadas individualmente para você
+            todos os dias baseado no seu desempenho. Estudo com eficiência e
+            foco no que precisa para aprovação.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -39,7 +41,9 @@ export function HeroSection() {
               size="lg"
               className="px-8 py-4 text-lg border-brand-200 text-brand-700 hover:bg-brand-50"
               onClick={() => {
-                document.getElementById('features-section')?.scrollIntoView({ behavior: 'smooth' });
+                document
+                  .getElementById("features-section")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Ver Recursos

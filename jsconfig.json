@@ -17,6 +17,12 @@
     "checkJs": false,
     "allowJs": true
   },
-  "include": ["client/**/*", "server/**/*", "shared/**/*", "vite.config.js", "vite.config.server.js"],
+  "include": [
+    "client/**/*",
+    "server/**/*",
+    "shared/**/*",
+    "vite.config.js",
+    "vite.config.server.js"
+  ],
   "exclude": ["node_modules", "dist"]
 }

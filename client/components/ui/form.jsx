@@ -8,17 +8,9 @@ const Form = FormProvider;
 
 const FormFieldContext = React.createContext({});
 
-const FormField = ({
-  name,
-  render,
-  ...fieldProps
-}) => (
+const FormField = ({ name, render, ...fieldProps }) => (
   <FormFieldContext.Provider value={{ name }}>
-    <Controller
-      name={name}
-      {...fieldProps}
-      render={render}
-    />
+    <Controller name={name} {...fieldProps} render={render} />
   </FormFieldContext.Provider>
 );
 
@@ -90,25 +82,27 @@ const FormDescription = React.forwardRef(({ className, ...props }, ref) => (
 ));
 FormDescription.displayName = "FormDescription";
 
-const FormMessage = React.forwardRef(({ className, children, ...props }, ref) => {
-  const { error, inputId } = useFormField();
-  const body = error ? String(error?.message) : children;
+const FormMessage = React.forwardRef(
+  ({ className, children, ...props }, ref) => {
+    const { error, inputId } = useFormField();
+    const body = error ? String(error?.message) : children;
 
-  if (!body) {
-    return null;
-  }
+    if (!body) {
+      return null;
+    }
 
-  return (
-    <p
-      ref={ref}
-      id={`${inputId}-error`}
-      className={cn("text-sm font-medium text-destructive", className)}
-      {...props}
-    >
-      {body}
-    </p>
-  );
-});
+    return (
+      <p
+        ref={ref}
+        id={`${inputId}-error`}
+        className={cn("text-sm font-medium text-destructive", className)}
+        {...props}
+      >
+        {body}
+      </p>
+    );
+  },
+);
 FormMessage.displayName = "FormMessage";
 
 export {
